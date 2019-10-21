@@ -47,9 +47,9 @@ public class MovieRepository {
                 .get();
 
         movie1.setName(movie.getName());
-        movie.setGenre(movie.getGenre());
-        movie.setReleaseYear(movie.getReleaseYear());
-        movie.setReleaseYear(movie.getReleaseYear());
+        movie1.setGenre(movie.getGenre());
+        movie1.setReleaseYear(movie.getReleaseYear());
+        movie1.setReleaseYear(movie.getReleaseYear());
 
         return movie1;
     }

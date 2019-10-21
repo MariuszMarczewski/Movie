@@ -1,3 +1,4 @@
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +19,6 @@ import java.util.List;
         @Test
         public void shouldReturnMaxIdBiggerBy1() {
 
-
 //        given
 
             Movie movietoSave = new Movie("var", null, "comedy",
@@ -30,12 +30,14 @@ import java.util.List;
             Movie result = movieRepository.save(movietoSave);
 
 //        then
+
             Assert.assertEquals(expected, result.getId());
         }
 
         @Test
         public void shouldReturnMovieListSmallerby1() {
 
+//            given
 
             List<Movie> movieList = new ArrayList<>();
             movieList.add(new Movie("f", 1, "c",
@@ -50,10 +52,28 @@ import java.util.List;
             movieRepository.delete(movieToDelete);
             int result = movieList.size();
 
-
-
 //        then
             Assert.assertEquals(expected, result);
+        }
+
+        @Test
+        public void shouldReturnUpdatedMovie(){
+
+//            given
+
+            final Movie movie = new Movie("f", 1, "c",
+                    2, "g", true, true, true);
+
+            final Movie expected = new Movie("a", 1, "c",
+                    2, "g", true, true, true);
+
+//            when
+
+          Movie result = movieRepository.update(movie);
+
+//            then
+
+            Assert.assertEquals(expected.getName(), result.getName());
         }
 
         @Test
@@ -112,5 +132,3 @@ import java.util.List;
 
     }
 
-
-}
