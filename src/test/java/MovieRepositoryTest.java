@@ -40,16 +40,15 @@ import java.util.List;
 //            given
 
             List<Movie> movieList = new ArrayList<>();
-            movieList.add(new Movie("f", 1, "c",
-                    2, "g", true, true, true));
+            Movie movieToBeDeleted  = new Movie("f", 1, "c",
+                    2, "g", true, true, true);
 
-            final Movie movieToDelete = movieList.get(0);
 
             final int expected = 0;
 
 //        when
 
-            movieRepository.delete(movieToDelete);
+            movieRepository.delete(movieToBeDeleted);
             int result = movieList.size();
 
 //        then
